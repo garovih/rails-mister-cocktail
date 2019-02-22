@@ -4,9 +4,12 @@
   <div class="card-product-infos">
   <% @cocktails.each do |cocktail| %>
   <%= cocktail.name %>
+  <%= cl_image_tag(cocktail.photo,
+      width: 400, height: 300, crop: :fill) %>
   <% end %>
 </div>
 </div>
+
 
 
 <%= link_to 'Add cocktail', new_cocktail_path, class: 'btn btn-primary' %>
