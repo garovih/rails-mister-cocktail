@@ -1,15 +1,34 @@
-<h1>Grand Cocktail</h1>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.pexels.com/photos/372959/pexels-photo-372959.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);">
+  <div class="container">
+    <h1>Grand Cocktail グランドカクテル</h1>
+   <div style="padding: 40px;text-align: center">
+      <%= link_to 'Add cocktail', new_cocktail_path, class: 'btn btn-primary' %>
+   </div>
+  </div>
+</div>
 
-<div class="card-product">
-  <div class="card-product-infos">
+
+<div class="container-fluid" style="background-color: silver">
+<div class=“row”>
+ <div class=“card-category" style="margin-top: 70px margin-bottom: 70px">
   <% @cocktails.each do |cocktail| %>
-  <%= cocktail.name %>
-  <%= cl_image_tag(cocktail.photo,
-      width: 400, height: 300, crop: :fill) %>
+    <div class="col-12 col-sm-6 col-md-4">
+      <div class="card">
+        <div style="margin-top: 50px">
+          <%= cocktail.name %>
+        </div>
+        <%= cl_image_tag(cocktail.photo,
+        width: 400, height: 300, class: "border-round", crop: :fill) %>
+      </div>
+    </div>
   <% end %>
+  </div>
+  </div>
 </div>
-</div>
 
 
 
-<%= link_to 'Add cocktail', new_cocktail_path, class: 'btn btn-primary' %>
+
+
+
+
